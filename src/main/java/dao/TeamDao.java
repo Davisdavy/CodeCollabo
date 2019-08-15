@@ -1,7 +1,6 @@
 package dao;
 
 import models.Developer;
-import models.Job;
 import models.Team;
 
 import java.util.List;

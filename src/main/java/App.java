@@ -1,20 +1,16 @@
 import static spark.Spark.*;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import spark.ModelAndView;
-import spark.template.handlebars.HandlebarsTemplateEngine;
-import static spark.Spark.*;
+
+import org.sql2o.Sql2o;
 
 public class App {
+    String connectionString = "jdbc:postgresql://localhost:5432/org";
+    Sql2o sql2o = new Sql2o(connectionString, "davis", "vegas2017");
 
     public static void main(String[] args) {
         staticFileLocation("/public");
 
-        get("/", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-            return new ModelAndView(model, "index.hbs");
-        }, new HandlebarsTemplateEngine());
+
+
+
     }
 }
